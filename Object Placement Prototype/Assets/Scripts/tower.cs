@@ -12,7 +12,6 @@ public class tower : MonoBehaviour
     public Transform bulletSpawn;
     private float timeTillFire;
     public float fireRate;
-    public float bulletSpeed;
 
     void Start()
     {
@@ -39,13 +38,4 @@ public class tower : MonoBehaviour
         timeTillFire -= Time.deltaTime;
     }
 
-    public void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("hit");
-        if (collision.gameObject.tag == "enemy")
-        {
-            Destroy(collision.gameObject);
-            Debug.Log("hitEnemy");
-        }
-    }
 }
