@@ -72,6 +72,7 @@ public class Player : MonoBehaviour
                     if (hit.collider.gameObject.tag == "tower")
                     {
                         Destroy(hit.collider.gameObject);
+                        points += towerPrice - towerPriceIncrease;
                     }
                 }
             }
