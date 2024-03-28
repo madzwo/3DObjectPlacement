@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &137640833459200006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7408041994810081754}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7408041994810081754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137640833459200006}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0.539}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7957530408262676246}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4229054535507671959
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +145,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0.2727273}
   m_LocalScale: {x: 0.09090909, y: 1, z: 1.1837}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7408041994810081754}
   m_Father: {fileID: 7952585238041259099}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7171320258882359513
@@ -288,3 +320,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretHolderTransform: {fileID: 7952585238041259099}
   target: {fileID: 0}
+  bulletPrefab: {fileID: 5282085244625390305, guid: 97b42c99671c0428084a820e48e43193, type: 3}
+  bulletSpawn: {fileID: 7408041994810081754}
+  bulletRb: {fileID: -7546152509262694198, guid: 97b42c99671c0428084a820e48e43193, type: 3}
+  fireRate: 2
+  bulletSpeed: 150
