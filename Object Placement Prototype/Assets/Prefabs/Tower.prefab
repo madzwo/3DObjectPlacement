@@ -323,3 +323,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5282085244625390305, guid: 97b42c99671c0428084a820e48e43193, type: 3}
   bulletSpawn: {fileID: 7408041994810081754}
   fireRate: 2
+  shootingDistance: 7

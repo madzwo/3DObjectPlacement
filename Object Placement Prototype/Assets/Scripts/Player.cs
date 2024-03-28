@@ -47,7 +47,6 @@ public class Player : MonoBehaviour
                     {
                         if(points >= towerPrice)
                         {
-                            Debug.Log("points: " + points + "; towerPrice: " + towerPrice);
                             points -= towerPrice;
                             towerPrice += towerPriceIncrease;
                             Vector3 instantiatePosition = hit.collider.gameObject.transform.position;
@@ -65,17 +64,13 @@ public class Player : MonoBehaviour
             }
             if (Input.GetMouseButtonDown(1)) 
             {
-                Debug.Log("right click");
                 Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
                 
                 if (Physics.Raycast(ray, out hit))
                 {
-                    Debug.Log("hit");
-                
                     if (hit.collider.gameObject.tag == "tower")
                     {
-                        Debug.Log("hit tower");
                         Destroy(hit.collider.gameObject);
                     }
                 }

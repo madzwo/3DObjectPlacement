@@ -1059,7 +1059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4131053110107427809, guid: 3f5db368baa0e46e38214e60fd530826, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.47
+      value: 16.44
       objectReference: {fileID: 0}
     - target: {fileID: 4131053110107427809, guid: 3f5db368baa0e46e38214e60fd530826, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2893,7 +2893,6 @@ MonoBehaviour:
   timeTillPoint: 0
   towerPrice: 10
   towerPriceIncrease: 10
-  livesCounter: {fileID: 0}
   livesCount: 5
 --- !u!65 &1964368428
 BoxCollider:

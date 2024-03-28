@@ -12,6 +12,7 @@ public class tower : MonoBehaviour
     public Transform bulletSpawn;
     private float timeTillFire;
     public float fireRate;
+    public float shootingDistance;
 
     void Start()
     {
@@ -21,7 +22,7 @@ public class tower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        target = GameObject.FindGameObjectWithTag("enemy");
+        target = FindTarget();
         if(target != null)
         {
             Vector3 aimDirection = target.transform.position - transform.position;
@@ -31,11 +32,28 @@ public class tower : MonoBehaviour
 
             if(timeTillFire <= 0)
             {
-                Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-                timeTillFire = fireRate;
+                if (Vector2.Distance(this.transform.position, target.transform.position) < shootingDistance)
+                {
+                    Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+                    timeTillFire = fireRate;
+                }
             }
         }
+        
         timeTillFire -= Time.deltaTime;
+    }
+
+    public GameObject FindTarget()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
+        for(int i = 0; i < enemies.Length; i++)
+        {
+            if (Vector2.Distance(this.transform.position, enemies[i].transform.position) < shootingDistance)
+            {
+                return enemies[i];
+            }
+        }
+        return null;
     }
 
 }
