@@ -22,6 +22,10 @@ public class Player : MonoBehaviour
                     Instantiate(tower, instantiatePosition, Quaternion.identity);
                     Destroy(hit.collider.gameObject);
                 }
+                if (hit.collider.gameObject.tag == "enemy")
+                {
+                    Destroy(hit.collider.gameObject);
+                }
             }
         }
         if (Input.GetMouseButtonDown(1)) 

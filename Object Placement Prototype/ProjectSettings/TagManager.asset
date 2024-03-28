@@ -6,6 +6,10 @@ TagManager:
   tags:
   - towerSpot
   - tower
+  - enemy
+  - turnDown
+  - turnLeft
+  - turnUp
   layers:
   - Default
   - TransparentFX
