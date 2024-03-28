@@ -10,6 +10,7 @@ TagManager:
   - turnDown
   - turnLeft
   - turnUp
+  - end
   layers:
   - Default
   - TransparentFX

@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
     public GameObject tower;
     public Camera mainCamera;
+
+    public int score;
+    public int lives;
+
+    public TMP_Text scoreText;
 
     void Update()
     {
@@ -25,6 +31,7 @@ public class Player : MonoBehaviour
                 if (hit.collider.gameObject.tag == "enemy")
                 {
                     Destroy(hit.collider.gameObject);
+                    score += 1;
                 }
             }
         }
@@ -45,5 +52,9 @@ public class Player : MonoBehaviour
                 }
             }
         }
+
+        
+        scoreText.SetText("" + score.ToString());
+
     }
 }

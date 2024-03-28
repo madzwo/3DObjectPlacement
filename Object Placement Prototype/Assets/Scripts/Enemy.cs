@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public float speed = 5f; // Desired constant speed
     public Rigidbody rb;
+    
 
     void Start()
     {
