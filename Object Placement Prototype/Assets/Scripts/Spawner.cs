@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour
     public float spawnRate;
     private float timeTillSpawn;
     public float spawnRateIncreaseRate;
+    public float maxSpawnRate;
 
     void Start()
     {
@@ -25,5 +26,10 @@ public class Spawner : MonoBehaviour
             spawnRate -= spawnRateIncreaseRate;
         }
         timeTillSpawn -= Time.deltaTime;
+
+        if (spawnRate <= maxSpawnRate)
+        {
+            spawnRate = maxSpawnRate;
+        }
     }
 }

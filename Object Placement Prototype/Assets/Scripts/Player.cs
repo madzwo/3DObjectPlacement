@@ -22,11 +22,13 @@ public class Player : MonoBehaviour
             
             if (Physics.Raycast(ray, out hit))
             {
+                Debug.Log("hit");
+
                 if (hit.collider.gameObject.tag == "towerSpot")
                 {
+                    Debug.Log("hittowerspot");
                     Vector3 instantiatePosition = hit.collider.gameObject.transform.position;
                     Instantiate(tower, instantiatePosition, Quaternion.identity);
-                    Destroy(hit.collider.gameObject);
                 }
                 if (hit.collider.gameObject.tag == "enemy")
                 {

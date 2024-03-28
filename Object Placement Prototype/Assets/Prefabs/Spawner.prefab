@@ -24,13 +24,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975334119563402730}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1377276995926085635}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &3174824900134322532
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +94,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a1513a8f29c4f4351b53975fa1e3ab28, type: 2}
+  - {fileID: 2100000, guid: f1173a6242b964569be3b21edfc23a91, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,5 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d55007d76ab644349deb9aa04b1df20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 1975334119563402730}
+  spawnPoint: {fileID: 2636690526233125332}
   enemyPrefab: {fileID: 7249660755502363804, guid: 71b92695247e7468bb27f2d714ca7cda, type: 3}
+  spawnRate: 5
+  spawnRateIncreaseRate: 0.1
+  maxSpawnRate: 0.5

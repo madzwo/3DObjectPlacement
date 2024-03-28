@@ -11,6 +11,7 @@ TagManager:
   - turnLeft
   - turnUp
   - end
+  - placableArea
   layers:
   - Default
   - TransparentFX
