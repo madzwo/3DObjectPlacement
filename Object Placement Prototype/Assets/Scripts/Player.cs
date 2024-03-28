@@ -8,78 +8,102 @@ public class Player : MonoBehaviour
     public GameObject tower;
     public Camera mainCamera;
 
-    public int score;
-
-
+    public TMP_Text scoreText;
     public TMP_Text pointsText;
     public TMP_Text priceText;
 
+    public int score;
+    public float scoreRate;
+    public float timeTillScore;  
+
     public int points;
+    public float pointRate;
+    public float timeTillPoint;
+
     public int towerPrice;
     public int towerPriceIncrease;
 
-    public float pointRate;
-    public float timeTillPoint;
+    public int livesCount;
+
 
     void Start()
     {
         timeTillPoint = pointRate;
+        timeTillScore = scoreRate;
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) 
+        if (livesCount > 0)
         {
-            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            
-            if (Physics.Raycast(ray, out hit))
+            if (Input.GetMouseButtonDown(0)) 
             {
-                if (hit.collider.gameObject.tag == "towerSpot");
+                Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                
+                if (Physics.Raycast(ray, out hit))
                 {
-                    if(points >= towerPrice)
+                    if (hit.collider.gameObject.tag == "towerSpot");
                     {
-                        Debug.Log("points: " + points + "; towerPrice: " + towerPrice);
-                        points -= towerPrice;
-                        towerPrice += towerPriceIncrease;
-                        Vector3 instantiatePosition = hit.collider.gameObject.transform.position;
-                        Instantiate(tower, instantiatePosition, Quaternion.identity);
-                        pointsText.SetText("" + points.ToString());
-                        priceText.SetText("" + towerPrice.ToString());
+                        if(points >= towerPrice)
+                        {
+                            Debug.Log("points: " + points + "; towerPrice: " + towerPrice);
+                            points -= towerPrice;
+                            towerPrice += towerPriceIncrease;
+                            Vector3 instantiatePosition = hit.collider.gameObject.transform.position;
+                            Instantiate(tower, instantiatePosition, Quaternion.identity);
+                            pointsText.SetText("" + points.ToString());
+                            priceText.SetText("" + towerPrice.ToString());
+                        }
+                    }
+                    if (hit.collider.gameObject.tag == "enemy")
+                    {
+                        Destroy(hit.collider.gameObject);
+                        score += 1;
                     }
                 }
-                if (hit.collider.gameObject.tag == "enemy")
-                {
-                    Destroy(hit.collider.gameObject);
-                    score += 1;
-                }
             }
-        }
-        if (Input.GetMouseButtonDown(1)) 
-        {
-            Debug.Log("right click");
-            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            
-            if (Physics.Raycast(ray, out hit))
+            if (Input.GetMouseButtonDown(1)) 
             {
-                Debug.Log("hit");
-            
-                if (hit.collider.gameObject.tag == "tower")
+                Debug.Log("right click");
+                Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                
+                if (Physics.Raycast(ray, out hit))
                 {
-                    Debug.Log("hit tower");
-                    Destroy(hit.collider.gameObject);
+                    Debug.Log("hit");
+                
+                    if (hit.collider.gameObject.tag == "tower")
+                    {
+                        Debug.Log("hit tower");
+                        Destroy(hit.collider.gameObject);
+                    }
                 }
             }
-        }
 
-        if (timeTillPoint <= 0)
-        {
-            points++;
-            pointsText.SetText("" + points.ToString());
-            timeTillPoint = pointRate;
-        }
+            if (timeTillPoint <= 0)
+            {
+                points++;
+                pointsText.SetText("" + points.ToString());
+                timeTillPoint = pointRate;
+            }
+            timeTillPoint -= Time.deltaTime;
 
-        timeTillPoint -= Time.deltaTime;
+            if (timeTillScore <= 0)
+            {
+                score++;
+                scoreText.SetText("" + score.ToString());
+                timeTillScore = scoreRate;
+            }
+            timeTillScore -= Time.deltaTime;
+        
+
+        }  
+    }
+
+    public void OnTriggerEnter(Collider collider)
+    {
+        livesCount--;
     }
 }
+

@@ -14,18 +14,24 @@ public class end : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        if(lives <= 0)
+        {
+            lives = 0;
+            livesText.SetText("" + lives.ToString());
+        }
     }
 
     public void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "enemy")
         {
+            if (lives > 0)
+            {
+                lives -= 1;
+            }
             Destroy(collision.gameObject);
-            lives -= 1;
             livesText.SetText("" + lives.ToString());
         }
     }
