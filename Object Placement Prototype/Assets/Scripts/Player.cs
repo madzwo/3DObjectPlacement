@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text pointsText;
     public TMP_Text priceText;
+    public TMP_Text price2Text;
+
 
     public int score;
     public float scoreRate;
@@ -66,6 +68,8 @@ public class Player : MonoBehaviour
                             tower2Price += tower2PriceIncrease;
                             Vector3 instantiatePosition = hit.collider.gameObject.transform.position;
                             Instantiate(tower2, instantiatePosition, Quaternion.identity);
+                            pointsText.SetText("" + points.ToString());
+                            price2Text.SetText("" + tower2Price.ToString());
                         }
                     }
                     if (hit.collider.gameObject.tag == "enemy")
