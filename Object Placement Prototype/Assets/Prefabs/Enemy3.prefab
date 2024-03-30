@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4726884106571397040}
   - component: {fileID: -3108426000180153934}
   - component: {fileID: 4766602849245312414}
-  m_Layer: 0
-  m_Name: Enemy
+  m_Layer: 6
+  m_Name: Enemy3
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,10 +96,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad9c73dddcac4befafb862c6b217c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   rb: {fileID: 4766602849245312414}
 --- !u!54 &4766602849245312414
 Rigidbody:
@@ -146,5 +146,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0

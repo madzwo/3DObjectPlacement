@@ -6,6 +6,8 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     public GameObject tower;
+    public GameObject tower2;
+
     public Camera mainCamera;
 
     public TMP_Text scoreText;
@@ -22,6 +24,9 @@ public class Player : MonoBehaviour
 
     public int towerPrice;
     public int towerPriceIncrease;
+
+    public int tower2Price;
+    public int tower2PriceIncrease;
 
     public int livesCount;
 
@@ -45,14 +50,22 @@ public class Player : MonoBehaviour
                 {
                     if (hit.collider.gameObject.tag == "towerSpot");
                     {
-                        if(points >= towerPrice)
+                        if ((points >= towerPrice) && (Input.GetKey(KeyCode.A)))
+                        {    
+                                points -= towerPrice;
+                                towerPrice += towerPriceIncrease;
+                                Vector3 instantiatePosition = hit.collider.gameObject.transform.position;
+                                Instantiate(tower, instantiatePosition, Quaternion.identity);
+                                pointsText.SetText("" + points.ToString());
+                                priceText.SetText("" + towerPrice.ToString());
+                            
+                        }
+                        else if ((points >= tower2Price) && (Input.GetKey(KeyCode.S)))
                         {
-                            points -= towerPrice;
-                            towerPrice += towerPriceIncrease;
+                            points -= tower2Price;
+                            tower2Price += tower2PriceIncrease;
                             Vector3 instantiatePosition = hit.collider.gameObject.transform.position;
-                            Instantiate(tower, instantiatePosition, Quaternion.identity);
-                            pointsText.SetText("" + points.ToString());
-                            priceText.SetText("" + towerPrice.ToString());
+                            Instantiate(tower2, instantiatePosition, Quaternion.identity);
                         }
                     }
                     if (hit.collider.gameObject.tag == "enemy")

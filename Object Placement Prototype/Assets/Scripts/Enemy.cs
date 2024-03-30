@@ -22,10 +22,8 @@ public class Enemy : MonoBehaviour
 
     public void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("collide");
         if (collider.gameObject.tag == "turnDown")
         {
-            Debug.Log("turnDown");
             Quaternion newRotation = Quaternion.Euler(0f, 180f, 0f);
             transform.rotation = newRotation;
         }
@@ -37,6 +35,11 @@ public class Enemy : MonoBehaviour
         if (collider.gameObject.tag == "turnUp")
         {
             Quaternion newRotation = Quaternion.Euler(0f, 0f, 0f);
+            transform.rotation = newRotation;
+        }
+        if (collider.gameObject.tag == "turnRight")
+        {
+            Quaternion newRotation = Quaternion.Euler(0f, 90f, 0f);
             transform.rotation = newRotation;
         }
     }
