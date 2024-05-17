@@ -8,6 +8,12 @@ public class Spawner : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject enemy2Prefab;
     public GameObject enemy3Prefab;
+    public GameObject enemy4Prefab;
+    public GameObject enemy5Prefab;
+    public GameObject enemy6Prefab;
+    public GameObject enemy7Prefab;
+
+
 
     public int spawnCount;
 
@@ -27,10 +33,25 @@ public class Spawner : MonoBehaviour
         if(timeTillSpawn <= 0)
         {
             Debug.Log(spawnCount);
-            if (spawnCount % 8 == 0)
+            if (spawnCount % 128 == 0)
+            {
+                Instantiate(enemy7Prefab, spawnPoint.position, spawnPoint.rotation);
+            }
+            else if (spawnCount % 64 == 0)
+            {
+                Instantiate(enemy6Prefab, spawnPoint.position, spawnPoint.rotation);
+            }
+            else if (spawnCount % 32 == 0)
+            {
+                Instantiate(enemy5Prefab, spawnPoint.position, spawnPoint.rotation);
+            }
+            else if (spawnCount % 16 == 0)
+            {
+                Instantiate(enemy4Prefab, spawnPoint.position, spawnPoint.rotation);
+            }
+            else if (spawnCount % 8 == 0)
             {
                 Instantiate(enemy3Prefab, spawnPoint.position, spawnPoint.rotation);
-                Debug.Log("spawn");
             }
             else if(spawnCount % 4 == 0)
             {   

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1975334119563402730}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1, y: 0.3, z: 0}
+  m_LocalPosition: {x: 1, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -129,7 +129,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 2636690526233125332}
-  enemyPrefab: {fileID: 7249660755502363804, guid: 71b92695247e7468bb27f2d714ca7cda, type: 3}
+  enemyPrefab: {fileID: 7249660755502363804, guid: 11b967f1a70824337a70961268db5158, type: 3}
+  enemy2Prefab: {fileID: 7249660755502363804, guid: c023ea5545b904efab5ea2471b77e89c, type: 3}
+  enemy3Prefab: {fileID: 7249660755502363804, guid: 71b92695247e7468bb27f2d714ca7cda, type: 3}
+  enemy4Prefab: {fileID: 7249660755502363804, guid: d45e435a2c17e442c9d993e291127df7, type: 3}
+  enemy5Prefab: {fileID: 7249660755502363804, guid: 7c06be5d9caeb47adb30336295277fcf, type: 3}
+  spawnCount: 1
   spawnRate: 5
-  spawnRateIncreaseRate: 0.1
+  spawnRateIncreaseRate: 0.15
   maxSpawnRate: 0.5

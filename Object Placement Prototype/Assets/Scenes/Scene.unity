@@ -2570,7 +2570,7 @@ Transform:
   m_GameObject: {fileID: 1635307555}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 0, y: 12.21, z: -6.28}
+  m_LocalPosition: {x: 0, y: 13.88, z: -6.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2885,10 +2885,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 7500384867307254804, guid: 17637db02ad134d078b21b1dab962f09, type: 3}
+  tower2: {fileID: 7500384867307254804, guid: 986919568d9b246198aa321340e97971, type: 3}
   mainCamera: {fileID: 1635307557}
   scoreText: {fileID: 1441642432}
   pointsText: {fileID: 250156560}
   priceText: {fileID: 457845451}
+  price2Text: {fileID: 0}
   score: 0
   scoreRate: 0.2
   timeTillScore: 0
@@ -2897,6 +2899,8 @@ MonoBehaviour:
   timeTillPoint: 0
   towerPrice: 10
   towerPriceIncrease: 10
+  tower2Price: 0
+  tower2PriceIncrease: 0
   livesCount: 5
 --- !u!65 &1964368428
 BoxCollider:
@@ -3565,6 +3569,14 @@ PrefabInstance:
       propertyPath: enemy2Prefab
       value: 
       objectReference: {fileID: 7249660755502363804, guid: c023ea5545b904efab5ea2471b77e89c, type: 3}
+    - target: {fileID: 7393732844627961360, guid: e90318de43e654899b3601780e09d19a, type: 3}
+      propertyPath: enemy6Prefab
+      value: 
+      objectReference: {fileID: 7249660755502363804, guid: bc03fc80ca011430baebcf7a0d454576, type: 3}
+    - target: {fileID: 7393732844627961360, guid: e90318de43e654899b3601780e09d19a, type: 3}
+      propertyPath: enemy7Prefab
+      value: 
+      objectReference: {fileID: 7249660755502363804, guid: 76cb8e13c1a6b48edaa11057fa8a9d1f, type: 3}
     - target: {fileID: 7393732844627961360, guid: e90318de43e654899b3601780e09d19a, type: 3}
       propertyPath: spawnRateIncreaseRate
       value: 0.15

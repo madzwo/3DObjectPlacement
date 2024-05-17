@@ -43,4 +43,28 @@ public class Enemy : MonoBehaviour
             transform.rotation = newRotation;
         }
     }
+
+    // private void OnDestroy()
+    // {
+    //     if(gameObject.tag != "enemy1")
+    //     {
+    //         if(gameObject.tag == "enemy2")
+    //         {
+    //             Instantiate(enemy1Prefab, gameObject.transform.position, gameObject.transform.rotation);
+    //         }
+    //         else if(gameObject.tag == "enemy3")
+    //         {
+    //             Instantiate(enemy2Prefab, gameObject.transform.position, gameObject.transform.rotation);
+    //         }
+    //         else if(gameObject.tag == "enemy4")
+    //         {
+    //             Instantiate(enemy3Prefab, gameObject.transform.position, gameObject.transform.rotation);
+    //         }
+    //         else if(gameObject.tag == "enemy5")
+    //         {
+    //             Instantiate(enemy4Prefab, gameObject.transform.position, gameObject.transform.rotation);
+    //         }
+
+    //     }
+    // }
 }
